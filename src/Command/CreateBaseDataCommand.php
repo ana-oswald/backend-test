@@ -20,7 +20,7 @@ class CreateBaseDataCommand extends Command
 {
 
     const POSTS_TO_CREATE = 20;
-    const CATEGORIES_TO_CREATE = 6;
+    const CATEGORIES_TO_CREATE = 15;
 
     protected static $defaultName = 'app:create-base-data';
 
