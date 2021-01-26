@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Posts{% endblock %}
+
+{% block body %}
+    <h1>Categories - <a href="{{ path('new_post') }}" class="btn btn-primary ">Add new Post</a></h1>
+
+    <br /><br />
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Category</th>
+            <th scope="col">Published Date</th>
+            <th scope="col">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for post in posts %}
+            <tr>
+                <th scope="row">{{ post.id }}</th>
+                <td>{{ post.title }}</td>
+                <td>{{ post.category.name }}</td>
+                <td>{{ post.publishDate|date('Y-m-d') }}</td>
+                <td>
+                    <a href="{{ path('edit_post', {'slug': post.slug}) }}" class="btn btn-warning">Edit</a>
+                    <a href="{{ path('post_delete', {'slug': post.slug}) }}" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

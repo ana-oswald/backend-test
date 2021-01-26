@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin management{% endblock %}
+
+{% block body %}
+<h1>Welcome to the admin page</h1>
+
+<a href="{{ path('category_list') }}">Manage categories</a>
+<br>
+<a href="{{ path('post_list') }}">Manage posts</a>
+{% endblock %}

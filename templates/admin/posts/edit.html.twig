@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme form 'admin/posts/theme.html.twig' %}
+
+{% block title %}Add/Edit Post{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/css/bootstrap-datepicker.css">
+{% endblock %}
+
+{% block body %}
+    <h1>Create new post</h1>
+
+    {{ form_start(form) }}
+    <div class="mb-3">
+        <label for="{{ form.title.vars.id }}" class="form-label">Title</label>
+        {{ form_widget(form.title, {'attr': {'class': 'form-control'}}) }}
+    </div>
+
+    <div class="mb-3">
+        <label for="{{ form.intro.vars.id }}" class="form-label">Intro</label>
+        {{ form_widget(form.intro, {'attr': {'class': 'form-control'}}) }}
+    </div>
+
+    <div class="mb-3">
+        <label for="{{ form.category.vars.id }}" class="form-label">Category</label>
+        {{ form_widget(form.category, {'attr': {'class': 'form-control'}}) }}
+    </div>
+
+    <div class="mb-3">
+        <label for="{{ form.publishDate.vars.id }}" class="form-label">Published date</label>
+        {{ form_widget(form.publishDate, {'attr': {'class': 'form-control js-datepicker'}}) }}
+    </div>
+
+    {{ form_widget(form.textContentList) }}
+    <br />
+
+    <div class="form-check">
+        {{ form_widget(form.published, {'attr': {'class': 'form-check-input'}}) }}
+        <label class="form-check-label" for="{{ form.published.vars.id }}">
+            Published
+        </label>
+    </div>
+
+    {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}
+
+    {{ form_end(form) }}
+
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.min.js"></script>
+    <script src="{{ asset('js/dynamicTextContents.js') }}"></script>
+{% endblock %}

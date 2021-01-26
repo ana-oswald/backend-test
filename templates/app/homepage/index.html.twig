@@ -1,0 +1,21 @@
+{% extends 'base_app.html.twig' %}
+
+
+{% block body %}
+
+<div class="container">
+    {% for post in posts %}
+        <div class="row align-items-start" style="padding-bottom: 25px;">
+            <div class="col"></div>
+            <div class="col" style="border:solid 1px #cccccc; ">
+                <h1>{{ post.title }}</h1>
+                <h5>{{ post.category.name }}</h5>
+                <p>{{ post.intro }}</p>
+                <p><a href="{{ path('app.post.detail', {'slug': post.slug}) }}" class="text-end">View Post</a></p>
+            </div>
+            <div class="col"></div>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

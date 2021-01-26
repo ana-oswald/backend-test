@@ -1,0 +1,11 @@
+{% block _post_textContentList_entry_row %}
+    <div class="mb-3">
+        <label for="{{ form.title.vars.id }}" class="form-label">Title</label>
+        {{ form_widget(form.title, {'attr': {'class': 'form-control'}}) }}
+    </div>
+
+    <div class="mb-3">
+        <label for="{{ form.text.vars.id }}" class="form-label">Text</label>
+        {{ form_widget(form.text, {'attr': {'class': 'form-control'}}) }}
+    </div>
+{% endblock %}

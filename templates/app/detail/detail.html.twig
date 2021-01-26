@@ -1,0 +1,21 @@
+{% extends 'base_app.html.twig' %}
+
+{% block body %}
+    <h1>{{ post.title }}</h1>
+    <h5>{{ post.category.name }} on {{ post.publishDate|date('Y-m-d') }}</h5>
+
+    <hr /><br />
+
+    <p>{{ post.intro }}</p>
+
+    <hr /><br />
+
+    <h3>Post Details:</h3>
+    {% for text in post.textContentList %}
+        <h3>{{ text.title }}</h3>
+        <p>{{ text.text }}</p>
+    {% endfor %}
+    <hr/><br />
+
+    <h3>Comments:</h3>
+{% endblock %}
