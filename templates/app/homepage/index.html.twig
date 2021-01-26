@@ -9,7 +9,7 @@
             <div class="col"></div>
             <div class="col" style="border:solid 1px #cccccc; ">
                 <h1>{{ post.title }}</h1>
-                <h5>{{ post.category.name }}</h5>
+                <h5>{{ post.category.name }} ( {{ post.textContentList|length }} contents available )</h5>
                 <p>{{ post.intro }}</p>
                 <p><a href="{{ path('app.post.detail', {'slug': post.slug}) }}" class="text-end">View Post</a></p>
             </div>

@@ -14,3 +14,7 @@ php bin/console cache:clear --no-warmup
 
 echo "Creating user.."
 php bin/console app:create-user
+
+
+echo "Creating base data.."
+php bin/console app:create-base-data

@@ -19,7 +19,7 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 class CreateBaseDataCommand extends Command
 {
 
-    const POSTS_TO_CREATE = 10;
+    const POSTS_TO_CREATE = 20;
     const CATEGORIES_TO_CREATE = 6;
 
     protected static $defaultName = 'app:create-base-data';
