@@ -1,5 +1,10 @@
 # backend-test
 
+### Requirements
+
+PHP > 7.2 ( it can probablty run in lower versions )
+Mysql > 5.6
+
 ### Install project:
 
 Just run ./install.sh after configuring your database parameters on .env.local
@@ -10,9 +15,11 @@ and also load some data by default.
 
 ### Test
 
-## Base instructions
+### Base instructions
 
 Fork this repository to your own github account. 
+
+### Test starts here
 
 #### 1. Blog post Comments
 
@@ -33,6 +40,13 @@ the details of the comment.
 
 The template for the listing of the comments is already done ( line 23 to line 36 of templates/app/detail.html.twig )
 
+Theme the form in a way that we only need to do:
+```
+{{ form(form) }}}
+```
+
+And the form layout is the first one show on this page: https://getbootstrap.com/docs/5.0/forms/overview/
+
 ### 2. Homepage
 
 Show only the posts that are published, and order them by published date DESC
@@ -46,7 +60,7 @@ solve that, without introducing a pager.
 ### 4. Backoffice
 
 For security reasons we need to store the last login date of the user.
-Create a way to save the last login date whenever a user logins to the backoffice.
+Create a way to save the last login date when a user logins to the backoffice.
 
 
 Good luck!
