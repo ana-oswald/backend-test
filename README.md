@@ -17,7 +17,8 @@ and also load some data by default.
 
 ### Base instructions
 
-Fork this repository to your own github account. 
+1. Fork this repo on github
+2. Commit early and often, with good messages
 
 ### Test starts here
 
