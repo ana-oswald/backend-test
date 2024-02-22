@@ -62,9 +62,18 @@ class Post
      */
     private $published;
 
+    /**
+     * @var Collection|Comment[]
+     * 
+     * @ORM\OneToMany(targetEntity="App\Entity\Comment", mappedBy="post")
+     */
+    private $comments;
+
+
     public function __construct()
     {
         $this->textContentList = new ArrayCollection();
+        $this->comments = new ArrayCollection();
     }
 
     /**
