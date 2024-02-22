@@ -157,6 +157,14 @@ class Post
     }
 
     /**
+     * @return Comment[]|Collection
+     */
+    public function getComments(): Collection
+    {
+        return $this->comments;
+    }
+
+    /**
      * @return TextContent[]|Collection
      */
     public function getTextContentList()
