@@ -1,6 +1,12 @@
+<h3>Add a Comment</h3>
+{% form_theme commentForm 'bootstrap_3_layout.html.twig' %}
+{{ form(commentForm) }}
+<hr>
+<br>
 <h3>Comments:</h3>
 
-{% for comment in post.comments %}
+<div id="comments">
+{% for comment in comments %}
   <div style="background: #cccccc; ">
     <p>Name:
       <a href="mailto:{{ comment.email }}">{{ comment.name }}</a>
@@ -10,3 +16,4 @@
   </div>
   <hr/>
 {% endfor %}
+</div>
